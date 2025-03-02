@@ -7,7 +7,8 @@ using usi = unsigned short int;
 
 bool trapezoid_check(usi a, usi b, usi c, usi d)
 {
-    if ((a+b+c)>d && (a+b+d)>c && (a+c+d)>b && (b+c+d)>a)
+    if (a>0 && b>0 && c>0 && d>0 &&
+        (a+b+c)>d && (a+b+d)>c && (a+c+d)>b && (b+c+d)>a)
     {
         return true;
     }
@@ -59,7 +60,7 @@ int main()
     }
     else
     {
-        cout << "Такой трапеции не существует!";
+        cout << "Трапеции с такими сторонами не существует!";
     }
 
     return 0;
