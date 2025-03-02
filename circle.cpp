@@ -14,6 +14,11 @@ float circle_sector_area(int R, float angle){ // функция для расч�
     return (angle / 360) * circle_area(R);
 }
 
+bool circle_validation_check(int R){
+    if (R <= 0) return false;
+    return true;
+}
+
 int main() 
 {
     short int choice = 0; // переменная для выбора действия
@@ -29,16 +34,28 @@ int main()
 
         if(choice == 1){
             int R;
+            
             cout << "Введите радиус окружности в сантиметрах: ";
             cin >> R;
-            cout << "Длина окружности равна: " << circle_length(R) << endl;
+            circle_validation_check(R);
+            if (circle_validation_check(R)) {
+                cout << "Длина окружности равна: " << circle_length(R) << endl;
+            }
+            else{
+                cout << "Некорректный радиус. Радиус должен быть больше 0";
+            }
         }
 
         if(choice == 2){
             int R;
             cout << "Введите радиус круга в сантиметрах: ";
             cin >> R;
-            cout << "Площадь круга равна: " << circle_area(R) << endl;
+            if (circle_validation_check(R)) {
+                cout << "Площадь круга равна: " << circle_area(R) << endl;
+            }
+            else{
+                cout << "Некорректный радиус. Радиус должен быть больше 0";
+            }
         }
 
         if(choice == 3){
@@ -46,9 +63,13 @@ int main()
             float angle;
             cout << "Введите радиус круга в сантиметрах: ";
             cin >> R;
-            cout << "Введите угол в градусах: ";
-            cin >> angle;
-            cout << "Площадь кругового сектора равна: " << circle_sector_area(R, angle) << endl;
+            if (circle_validation_check(R)) {
+                cin >> angle;
+                cout << "Площадь кругового сектора равна: " << circle_sector_area(R, angle) << endl;
+            }
+            else{
+                cout << "Некорректный радиус. Радиус должен быть больше 0";
+            }
         }
 
         if(choice == 4){
