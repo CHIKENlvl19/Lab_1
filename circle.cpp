@@ -72,7 +72,7 @@ int main()
             }
         }
 
-        if(choice == 4){
+        if(choice == 4){ // выход из программы
             return 0;
         }
 
