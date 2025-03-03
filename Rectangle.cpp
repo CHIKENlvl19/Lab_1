@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream> //Комментарий для защиты
 
 int perimeterRectangle(int a, int b) { //Функция для вычисления периметра прямоугольника
     return (a + b) * 2 ;
