@@ -10,6 +10,8 @@ float area(usi a, usi b, usi c, usi d)
     return ((float)(a+b)/2) * sqrt(pow(c, 2) - pow((((pow(a-b, 2)) + pow(c, 2) - pow(d, 2)) / abs(2*(a-b))), 2));
 }
 
+// Trapezoid check now works fine 
+
 bool trapezoid_check(int a, int b, int c, int d)
 {
     if (a>0 && b>0 && c>0 && d>0 &&
