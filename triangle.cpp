@@ -6,7 +6,7 @@ float Perimeter(float a, float b, float c) {
 }
 
 float Area(float a, float b, float c) {
-    float s = Perimeter(a, b, c) / 2; // Полупериметр
+    float s = Perimeter(a, b, c) / 2;
     return sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
@@ -43,5 +43,5 @@ int main() {
         }
     }
 
-    return 0;
+    return 0; // comment
 }
