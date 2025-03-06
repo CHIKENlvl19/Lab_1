@@ -5,10 +5,18 @@
 using namespace std;
 using usi = unsigned short int;
 
-bool trapezoid_check(usi a, usi b, usi c, usi d)
+float area(usi a, usi b, usi c, usi d)
+{
+    return ((float)(a+b)/2) * sqrt(pow(c, 2) - pow((((pow(a-b, 2)) + pow(c, 2) - pow(d, 2)) / abs(2*(a-b))), 2));
+}
+
+// Trapezoid check now works fine 
+
+bool trapezoid_check(int a, int b, int c, int d)
 {
     if (a>0 && b>0 && c>0 && d>0 &&
-        (a+b+c)>d && (a+b+d)>c && (a+c+d)>b && (b+c+d)>a)
+        (a+b+c)>d && (a+b+d)>c && (a+c+d)>b && (b+c+d)>a &&
+        area(a, b, c, d) > 0)
     {
         return true;
     }
@@ -28,10 +36,6 @@ float middle_line(usi a, usi b)
     return (float)(a+b)/2;
 }
 
-float area(usi a, usi b, usi c, usi d)
-{
-    return ((float)(a+b)/2) * sqrt(pow(c, 2) - pow((((pow(a-b, 2)) + pow(c, 2) - pow(d, 2)) / abs(2*(a-b))), 2));
-}
 
 
 int main()
